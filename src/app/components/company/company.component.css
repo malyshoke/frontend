@@ -1,0 +1,11 @@
+.company-details {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.rating {
+  color: #555;
+  font-style: italic;
+}

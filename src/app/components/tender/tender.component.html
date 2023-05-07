@@ -9,10 +9,10 @@
         </mat-card-header>
         <mat-card-content>
           <p>Бюджет: {{ tender.tenderBudget }}000 рублей</p>
-          <p>Компания: {{ tender.companyId }}</p>
+          <p>Компания: {{ tender.company.companyName }}</p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-raised-button color="primary">Посмотреть детали</button>
+          <button mat-raised-button color="primary" (click)="onDetailsClick(tender.companyId)">Посмотреть детали</button>
         </mat-card-actions>
       </mat-card>
     </div>

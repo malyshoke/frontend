@@ -9,12 +9,15 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatCardModule} from "@angular/material/card";
 import {TenderService} from "./components/tender/tender.service";
 import {Routes} from "@angular/router";
+import { CompanyComponent } from './components/company/company.component';
+import {CompanyService} from "./components/company/company.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     //TenderComponent,
-    routingComponents
+    routingComponents,
+    CompanyComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,8 @@ import {Routes} from "@angular/router";
     MatCardModule
   ],
   providers: [
-    TenderService
+    TenderService,
+    CompanyService
   ],
   bootstrap: [AppComponent]
 })
