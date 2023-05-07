@@ -9,6 +9,7 @@ import { CompanyService } from '../company/company.service';
 })
 export class TenderComponent implements OnInit {
   public tenders: ITender[] = [];
+  viewType: string = 'table';
   public selectedCompanyId: number = 0;
 
   constructor(

@@ -1,20 +1,51 @@
 <div class="tender">
   <h2>tender works!</h2>
-  <ul>
-    <div *ngFor="let tender of tenders">
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>{{ tender.tenderName }}</mat-card-title>
-          <mat-card-subtitle>{{ tender.tenderStart | date }} - {{ tender.tenderEnd | date }}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <p>Бюджет: {{ tender.tenderBudget }}000 рублей</p>
-          <p>Компания: {{ tender.company.companyName }}</p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-raised-button color="primary">Посмотреть детали</button>
-        </mat-card-actions>
-      </mat-card>
+  <div class="view-toggle">
+    <button mat-raised-button color="primary" (click)="viewType = 'table'">Таблица</button>
+    <button mat-raised-button color="primary" (click)="viewType = 'cards'">Карточки</button>
+  </div>
+  <ng-container *ngIf="viewType === 'table'; else cardView">
+    <table>
+      <thead>
+      <tr>
+        <th>Название тендера</th>
+        <th>Дата начала</th>
+        <th>Дата окончания</th>
+        <th>Бюджет</th>
+        <th>Компания</th>
+        <th>Действия</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let tender of tenders">
+        <td>{{ tender.tenderName }}</td>
+        <td>{{ tender.tenderStart | date }}</td>
+        <td>{{ tender.tenderEnd | date }}</td>
+        <td>{{ tender.tenderBudget }}000 рублей</td>
+        <td>{{ tender.company.companyName }}</td>
+        <td><button mat-raised-button color="primary">Посмотреть детали</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </ng-container>
+  <ng-template #cardView>
+    <div class="card-container">
+      <div *ngFor="let tender of tenders">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{ tender.tenderName }}</mat-card-title>
+            <mat-card-subtitle>{{ tender.tenderStart | date }} - {{ tender.tenderEnd | date }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>Бюджет: {{ tender.tenderBudget }}000 рублей</p>
+            <p>Компания: {{ tender.company.companyName }}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary">Посмотреть детали</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
     </div>
-  </ul>
+  </ng-template>
 </div>
+
