@@ -1,20 +1,31 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TenderComponent } from './components/tender/tender.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {HttpClientModule} from "@angular/common/http";
+import {MatCardModule} from "@angular/material/card";
+import {TenderService} from "./components/tender/tender.service";
+import {Routes} from "@angular/router";
 
 @NgModule({
   declarations: [
     AppComponent,
-    TenderComponent
+    //TenderComponent,
+    routingComponents
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatCardModule
   ],
-  providers: [],
+  providers: [
+    TenderService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
