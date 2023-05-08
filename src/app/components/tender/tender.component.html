@@ -23,7 +23,7 @@
         <td>{{ tender.tenderEnd | date }}</td>
         <td>{{ tender.tenderBudget }}000 рублей</td>
         <td>{{ tender.company.companyName }}</td>
-        <td><button mat-raised-button color="primary">Посмотреть детали</button></td>
+        <td><button class="custom-button" mat-raised-button color="primary">Посмотреть детали</button></td>
       </tr>
       </tbody>
     </table>
@@ -41,7 +41,7 @@
             <p>Компания: {{ tender.company.companyName }}</p>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-raised-button color="primary">Посмотреть детали</button>
+            <button class="custom-button" mat-raised-button color="primary">Посмотреть детали</button>
           </mat-card-actions>
         </mat-card>
       </div>

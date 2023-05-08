@@ -1,0 +1,42 @@
+
+body {
+  background-color: #f7f7f7;
+}
+
+.header svg {
+  width: 64px;
+  height: 64px;
+  float: left;
+}
+
+footer {
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+footer p {
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  color: #333;
+}
+
+.footer-box {
+  background-color: #ccc;
+  border-radius: 5px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #444;
+}
+
+.footer-accent {
+  background-color: #ffcc00;
+  width: 10px;
+  height: 100%;
+  margin-right: 10px;
+}
