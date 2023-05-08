@@ -11,6 +11,7 @@ export class TenderComponent implements OnInit {
   public tenders: ITender[] = [];
   viewType: string = 'table';
   public selectedCompanyId: number = 0;
+  public searchTerm: string = '';
 
   constructor(
     private _tenderservice: TenderService,
@@ -18,6 +19,18 @@ export class TenderComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.getTenders();
+  }
+
+  getTenders(): void {
     this._tenderservice.getTenders().subscribe(data => this.tenders = data);
+  }
+
+  searchTender(): void {
+    if(this.searchTerm.trim()) {
+      this._tenderservice.searchTenders(this.searchTerm).subscribe(data => this.tenders = data);
+    } else {
+      this.getTenders();
+    }
   }
 }

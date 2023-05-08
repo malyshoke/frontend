@@ -11,11 +11,12 @@ import {TenderService} from "./components/tender/tender.service";
 import {Routes} from "@angular/router";
 import { CompanyComponent } from './components/company/company.component';
 import {CompanyService} from "./components/company/company.service";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
-    //TenderComponent,
+    TenderComponent,
     routingComponents,
     CompanyComponent
   ],
@@ -24,7 +25,8 @@ import {CompanyService} from "./components/company/company.service";
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule
   ],
   providers: [
     TenderService,
