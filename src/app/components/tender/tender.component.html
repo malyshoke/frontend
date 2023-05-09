@@ -1,4 +1,7 @@
 <div class="tender">
+  <button mat-icon-button (click)="goBack()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
   <h2>tender works!</h2>
   <input type="text" [(ngModel)]="searchTerm" placeholder="Введите название тендера">
   <button mat-raised-button color="primary" (click)="searchTender()">Найти</button>
@@ -50,4 +53,3 @@
     </div>
   </ng-template>
 </div>
-

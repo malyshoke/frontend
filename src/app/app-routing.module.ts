@@ -6,6 +6,7 @@ import {CompanyComponent} from "./components/company/company.component";
 
 const routes: Routes = [
   {path: 'tender', component: TenderComponent},
+  { path: 'tender/:name', component: TenderComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -12,6 +12,7 @@ import {Routes} from "@angular/router";
 import { CompanyComponent } from './components/company/company.component';
 import {CompanyService} from "./components/company/company.service";
 import {FormsModule} from "@angular/forms";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -20,14 +21,15 @@ import {FormsModule} from "@angular/forms";
     routingComponents,
     CompanyComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatCardModule,
-    FormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatCardModule,
+        FormsModule,
+        MatIconModule
+    ],
   providers: [
     TenderService,
     CompanyService
