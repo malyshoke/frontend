@@ -13,26 +13,34 @@ import { CompanyComponent } from './components/company/company.component';
 import {CompanyService} from "./components/company/company.service";
 import {FormsModule} from "@angular/forms";
 import {MatIconModule} from "@angular/material/icon";
+import {MatOptionModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
+import { TenderdetailsComponent } from './components/tenderdetails/tenderdetails.component';
+import {TenderdetailsService} from "./components/tenderdetails/tenderdetails.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     TenderComponent,
     routingComponents,
-    CompanyComponent
+    CompanyComponent,
+    TenderdetailsComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        HttpClientModule,
-        MatCardModule,
-        FormsModule,
-        MatIconModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatCardModule,
+    FormsModule,
+    MatIconModule,
+    MatOptionModule,
+    MatSelectModule
+  ],
   providers: [
     TenderService,
-    CompanyService
+    CompanyService,
+    TenderdetailsService
   ],
   bootstrap: [AppComponent]
 })

@@ -65,3 +65,16 @@ button.mat-icon-button {
   width: 24px;
   height: 24px;
 }
+.mat-select {
+  border: 1px solid #ddd;
+}
+
+.mat-select-panel {
+  max-height: 100px;
+  background-color: #f5f5f5;
+}
+
+.mat-option {
+  color: #333;
+}
+

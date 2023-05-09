@@ -8,7 +8,7 @@ import {CompanyService} from "./company.service";
   styleUrls: ['./company.component.css']
 })
 export class CompanyComponent implements OnInit {
-  companyId: number = 2; // Задаем идентификатор компании, которую мы хотим получить
+  companyId: number = 2;
 
   company: ICompany | undefined;
 

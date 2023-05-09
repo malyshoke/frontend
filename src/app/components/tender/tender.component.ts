@@ -11,9 +11,9 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class TenderComponent implements OnInit {
   public tenders: ITender[] | undefined;
   viewType: string = 'table';
-  public selectedCompanyId: number = 0;
   public searchTerm: string = '';
   public showBackButton = false;
+  sortOrder: string = 'asc'
 
   constructor(
     private _tenderservice: TenderService,
@@ -48,19 +48,20 @@ export class TenderComponent implements OnInit {
     this.router.navigateByUrl('/tender');
   }
 
-  sortTendersByBudgetDescending() {
-    if (this.tenders === undefined) {
-      return;
+  sortTenders() {
+    if (this.sortOrder === 'asc') {
+      if (this.tenders) {
+        this.tenders.sort((a, b) => a.tenderBudget - b.tenderBudget);
+      }
+    } else if (this.sortOrder === 'desc') {
+      if (this.tenders) {
+        this.tenders.sort((a, b) => b.tenderBudget - a.tenderBudget);
+      }
     }
-    this.tenders.sort((a, b) => b.tenderBudget - a.tenderBudget);
   }
 
-  sortTendersByBudgetAscending() {
-    if (this.tenders === undefined) {
-      return;
-    }
-    this.tenders.sort((a, b) => a.tenderBudget - b.tenderBudget);
+  goToDetails(id: number) {
+    this.router.navigate(['/tenderdetails', id]);
   }
-
 
 }
