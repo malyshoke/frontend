@@ -60,3 +60,8 @@ tr:nth-child(even) {
 tr:hover {
   background-color: #ddd;
 }
+
+button.mat-icon-button {
+  width: 24px;
+  height: 24px;
+}
