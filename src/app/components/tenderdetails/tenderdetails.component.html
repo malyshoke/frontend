@@ -4,9 +4,9 @@
       <div class="tender-details-header">
         <h2>{{ tender.tenderName }}</h2>
       </div>
-      <p>Начало: {{ tender.tenderStart }}</p>
-      <p>Окончание: {{ tender.tenderEnd }}</p>
-      <p>Бюджет: {{ tender.tenderBudget }}</p>
+      <p>Начало: {{ tender.tenderStart| date }}</p>
+      <p>Окончание: {{ tender.tenderEnd | date}}</p>
+      <p>Бюджет: {{ tender.tenderBudget }} тыс. рублей</p>
     </div>
     <div class="tender-details-company-info">
       <div class="tender-details-header">
@@ -16,6 +16,26 @@
       <p>Юридический адрес: {{ tender.company.companyAddress }}</p>
       <p>Телефон: {{ tender.company.companyPhone }}</p>
       <p>Электронная почта: {{ tender.company.companyEmail }}</p>
+    </div>
+  </div>
+  <div class="tender-details-bids">
+    <h2>Участники закупки и их ставки</h2>
+    <table *ngIf="tender.tenderings && tender.tenderings.length > 0">
+      <thead>
+      <tr>
+        <th>Компания</th>
+        <th>Ставка, тыс. рублей </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let tendering of tender.tenderings">
+        <td>{{ tendering.companyId }}</td>
+        <td>{{ tendering.currentBid }}</td>
+      </tr>
+      </tbody>
+    </table>
+    <div *ngIf="!tender.tenderings || tender.tenderings.length == 0">
+      В этой закупке пока никто не принял участие.
     </div>
   </div>
 </div>
