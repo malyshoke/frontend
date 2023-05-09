@@ -10,6 +10,10 @@
     <button mat-raised-button color="primary" (click)="viewType = 'table'">Таблица</button>
     <button mat-raised-button color="primary" (click)="viewType = 'cards'">Карточки</button>
   </div>
+  <div class="sort-container">
+    <button mat-raised-button color="primary" (click)="sortTendersByBudgetAscending()">Сортировать по возрастанию бюджета</button>
+    <button mat-raised-button color="primary" (click)="sortTendersByBudgetDescending()">Сортировать по убыванию бюджета</button>
+  </div>
   <ng-container *ngIf="viewType === 'table'; else cardView">
     <table>
       <thead>

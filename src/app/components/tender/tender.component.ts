@@ -27,6 +27,8 @@ export class TenderComponent implements OnInit {
     this.getTenders();
   }
 
+
+
   getTenders(): void {
     this._tenderservice.getTenders().subscribe(data => this.tenders = data);
   }
@@ -45,5 +47,20 @@ export class TenderComponent implements OnInit {
   goBack() {
     this.router.navigateByUrl('/tender');
   }
+
+  sortTendersByBudgetDescending() {
+    if (this.tenders === undefined) {
+      return;
+    }
+    this.tenders.sort((a, b) => b.tenderBudget - a.tenderBudget);
+  }
+
+  sortTendersByBudgetAscending() {
+    if (this.tenders === undefined) {
+      return;
+    }
+    this.tenders.sort((a, b) => a.tenderBudget - b.tenderBudget);
+  }
+
 
 }
