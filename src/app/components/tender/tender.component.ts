@@ -3,6 +3,7 @@ import { ITender } from './tender';
 import { TenderService } from './tender.service';
 import { CompanyService } from '../company/company.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {lastValueFrom} from "rxjs";
 @Component({
   selector: 'app-tender',
   templateUrl: './tender.component.html',
@@ -19,18 +20,32 @@ export class TenderComponent implements OnInit {
     private _tenderservice: TenderService,
     private _companyservice: CompanyService,
     private router: Router,
-    private route: ActivatedRoute
   ) {}
 
-
   ngOnInit(): void {
-    this.getTenders();
+    this.loadTenders();
   }
-
-
 
   getTenders(): void {
     this._tenderservice.getTenders().subscribe(data => this.tenders = data);
+  }
+
+  async loadTenders(): Promise<void> {
+    if (this.searchTerm.trim()) {
+      this._tenderservice.searchTenders(this.searchTerm).subscribe(res => {
+        console.log(this.tenders)
+        console.log("Строка ввода НЕ пуста")
+        this.tenders = res;
+        console.log(this.tenders)
+        this.showBackButton = true;
+        this.router.navigate(['/tender', this.searchTerm]);
+      })
+    } else {
+      console.log("Строка ввода пуста")
+      this._tenderservice.getTenders().subscribe(data => this.tenders = data);
+      this.showBackButton = false;
+      this.searchTerm = '';
+    }
   }
 
   async searchTender(): Promise<void> {
@@ -40,7 +55,7 @@ export class TenderComponent implements OnInit {
       this.router.navigate(['/tender', this.searchTerm]);
     } else {
       this.showBackButton = false; // скрываем кнопку назад
-      this.getTenders();
+      this.loadTenders();
     }
   }
 

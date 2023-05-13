@@ -5,11 +5,12 @@
   </button>
   <h2>tender works!</h2>
   <input type="text" [(ngModel)]="searchTerm" placeholder="Введите название тендера">
-  <button mat-raised-button color="primary" (click)="searchTender()">Найти</button>
+  <button mat-raised-button color="primary" (click)="loadTenders()">Найти</button>
   <div class="view-toggle">
     <button mat-raised-button color="primary" (click)="viewType = 'table'">Таблица</button>
     <button mat-raised-button color="primary" (click)="viewType = 'cards'">Карточки</button>
   </div>
+
   <div class="sort-container">
     <mat-form-field appearance="fill">
       <mat-label>Сортировка</mat-label>

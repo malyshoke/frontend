@@ -17,6 +17,7 @@ import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import { TenderdetailsComponent } from './components/tenderdetails/tenderdetails.component';
 import {TenderdetailsService} from "./components/tenderdetails/tenderdetails.service";
+import { AuthComponent } from './components/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {TenderdetailsService} from "./components/tenderdetails/tenderdetails.ser
     TenderComponent,
     routingComponents,
     CompanyComponent,
-    TenderdetailsComponent
+    TenderdetailsComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

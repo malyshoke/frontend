@@ -12,8 +12,6 @@ export class TenderService {
   }
 
   searchTenders(name: string): Observable<ITender[]> {
-    return this.http.get<ITender[]>(`http://localhost:5090/api/Tenders/GetTendersName/${name}`).pipe(
-      tap((response) => console.log(response))
-    );
+    return this.http.get<ITender[]>(`http://localhost:5090/api/Tenders/GetTendersName/${name}`)
   }
 }
