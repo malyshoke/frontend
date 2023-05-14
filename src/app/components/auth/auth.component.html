@@ -5,27 +5,23 @@
         <form #f="ngForm" (ngSubmit)="Login(f.value)">
           <p>{{msg}}</p>
           <mat-form-field>
-            <input matInput type="text"
-                   placeholder="User Name"
-                   ngModel name="login" #un="ngModel"
-                   required
-                   (input)="ResetMsg()"
-            >
-            <mat-error *ngIf="un?.errors?.['required']">Login required</mat-error>
+            <input matInput type="text" placeholder="Имя пользователя" ngModel name="login" #un="ngModel" required (input)="ResetMsg()">
+            <mat-error *ngIf="un?.errors?.['required']">Введите логин</mat-error>
           </mat-form-field>
+
           <mat-form-field>
             <input matInput type="password"
-                   placeholder="Password"
+                   placeholder="Пароль"
                    ngModel name="password" #pwd="ngModel"
                    required
                    (input)="ResetMsg()"
             >
-            <mat-error *ngIf="pwd?.errors?.['required']">Password required</mat-error>
+            <mat-error *ngIf="pwd?.errors?.['required']">Введите пароль</mat-error>
           </mat-form-field>
           <button mat-raised-button
                   type="submit"
                   [disabled]="f.invalid"
-          >Log In
+          >Войти
           </button>
         </form>
       </mat-card-content>

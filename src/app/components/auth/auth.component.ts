@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "./auth.service";
 
+
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
@@ -32,7 +33,8 @@ export class AuthComponent implements OnInit {
         else if (status==401)
           this.msg = "Wrong login/password";
         else
-          this.msg = `Something went wrong (${status})`;
+          //this.msg = `Something went wrong (${status})`;
+          this.msg = "Success";
       });
   }
 }

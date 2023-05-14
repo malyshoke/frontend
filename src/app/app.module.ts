@@ -18,6 +18,7 @@ import {MatSelectModule} from "@angular/material/select";
 import { TenderdetailsComponent } from './components/tenderdetails/tenderdetails.component';
 import {TenderdetailsService} from "./components/tenderdetails/tenderdetails.service";
 import { AuthComponent } from './components/auth/auth.component';
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { AuthComponent } from './components/auth/auth.component';
     FormsModule,
     MatIconModule,
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatInputModule
   ],
   providers: [
     TenderService,
