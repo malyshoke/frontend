@@ -10,6 +10,7 @@ const routes: Routes = [
   {path: 'tender', component: TenderComponent},
   { path: 'tender/:name', component: TenderComponent },
   {path: 'auth', component: AuthComponent},
+  {path: 'company', component: CompanyComponent},
   { path: 'tenderdetails/:id', component: TenderdetailsComponent },
 ];
 @NgModule({
@@ -17,4 +18,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [TenderComponent, TenderdetailsComponent, AuthComponent]
+export const routingComponents = [TenderComponent, TenderdetailsComponent, AuthComponent, CompanyComponent]

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {ITender} from "./components/tender/tender";
-import {TenderService} from "./components/tender/tender.service";
 
 @Component({
   selector: 'app-root',
@@ -8,20 +6,21 @@ import {TenderService} from "./components/tender/tender.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'My App';
-  tenders: ITender[] = [];
+  currentPage = window.location.href;
 
-  constructor(private tenderService: TenderService) {}
+  constructor() {}
 
   ngOnInit(): void {
-    this.tenderService.getTenders().subscribe(
-      (data: ITender[]) => {
-        this.tenders = data;
-        console.log(data); // выведет полученные данные в консоль
-      },
-      (error) => {
-        console.log(error); // выведет ошибку в консоль
+    if (this.currentPage === 'http://localhost:51055') {
+      const mainPageElement = document.getElementById('main-page');
+      if (mainPageElement) {
+        mainPageElement.style.display = 'block';
       }
-    );
+    } else {
+      const mainPageElement = document.getElementById('main-page');
+      if (mainPageElement) {
+        mainPageElement.style.display = 'none';
+      }
+    }
   }
 }

@@ -19,6 +19,7 @@ import { TenderdetailsComponent } from './components/tenderdetails/tenderdetails
 import {TenderdetailsService} from "./components/tenderdetails/tenderdetails.service";
 import { AuthComponent } from './components/auth/auth.component';
 import {MatInputModule} from "@angular/material/input";
+import {MatGridListModule} from "@angular/material/grid-list";
 
 @NgModule({
   declarations: [
@@ -29,18 +30,19 @@ import {MatInputModule} from "@angular/material/input";
     TenderdetailsComponent,
     AuthComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatCardModule,
-    FormsModule,
-    MatIconModule,
-    MatOptionModule,
-    MatSelectModule,
-    MatInputModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatCardModule,
+        FormsModule,
+        MatIconModule,
+        MatOptionModule,
+        MatSelectModule,
+        MatInputModule,
+        MatGridListModule
+    ],
   providers: [
     TenderService,
     CompanyService,

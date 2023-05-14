@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ICompany} from "./company";
 import {CompanyService} from "./company.service";
+import {ITender} from "../tender/tender";
 
 @Component({
   selector: 'app-company',
@@ -9,12 +10,15 @@ import {CompanyService} from "./company.service";
 })
 export class CompanyComponent implements OnInit {
   companyId: number = 2;
-
-  company: ICompany | undefined;
+  public companies: ICompany[] | undefined;
 
   constructor(private _compservice: CompanyService) { }
 
   ngOnInit(): void {
-    this._compservice.getCompanyById(this.companyId).subscribe(data => this.company = data);
+    this.getCompanies();
+  }
+
+  getCompanies(): void {
+    this._compservice.getCompanies().subscribe(data => this.companies = data);
   }
 }

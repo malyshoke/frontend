@@ -18,3 +18,29 @@
   color: #333;
   font-family: 'Roboto', sans-serif;
 }
+
+.mat-card-header, .mat-card-content, .mat-card-actions {
+  padding: 8px;
+}
+
+.mat-card-header {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.mat-card-content, .mat-card-actions {
+  font-size: 16px;
+}
+
+.company-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.company-card {
+  margin: 16px;
+  width: 300px;
+  background: linear-gradient(#c2c2c2, #555555);
+  color: #333;
+}
